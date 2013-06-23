@@ -12,7 +12,7 @@ for (var i = 2; i <= 100; i++) {
 	}
 }
 
-fs.writeFileSync(outfile, out);  
+fs.writeFileSync(outfile, out + "\n");  
 console.log("Script: " + __filename + "\nWrote: " + out + "To: " + outfile);
 
 function isPrime(number) {
