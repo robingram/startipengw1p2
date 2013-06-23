@@ -1,16 +1,17 @@
 #!/usr/bin/env node
 var fs = require('fs');
 var outfile = "primes.txt";
-var out = '';
 
-for (var i = 2; i <= 100; i++) {
+var primes = new Array();
+var i = 2;
+while (primes.length < 100) {
 	if (isPrime(i)) {
-		if (out != '') {
-			out += ',';
-		}
-		out += i;
+		primes.push(i);
 	}
+	i++;
 }
+
+var out = primes.join(',');
 
 fs.writeFileSync(outfile, out + "\n");  
 console.log("Script: " + __filename + "\nWrote: " + out + "To: " + outfile);
